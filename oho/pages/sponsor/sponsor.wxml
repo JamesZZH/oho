@@ -1,0 +1,16 @@
+<view class="container userinfo-background">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{list.logo}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{list.name}}</text>
+    <view style="font-size:28rpx;">{{list.birth}}</view>
+    <view style="width:600rpx; font-size:26rpx;text-align:center;">{{list.person_sign}}</view>
+  </view>
+</view>
+<view class="weui-cell weui-cell_access">
+  <view class="weui-cell__bd">相册</view>
+</view>
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+  <block wx:for="{{pic}}">
+    <image src="{{item}}" class="scroll-view-item_H"></image>
+  </block>
+</scroll-view>

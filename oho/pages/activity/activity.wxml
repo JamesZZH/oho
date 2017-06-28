@@ -1,0 +1,48 @@
+<!--悬浮球-->
+<!--<view class="float-action" style="opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;">-->
+  <image class="select-location" bindtap="ballClickEvent" style="opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent" src="../../images/select_location.png"></image>
+  <!--<view class="float-action-title">位置</view>
+</view>-->
+<view class="body">
+  <scroll-view scroll-x="true" class="xscroll_bar">
+    <view class="menu_item {{activeIndex==0?'active':''}}" style="width:{{itemWidth}};" bindtap="tabChange" data-index="0">
+      <view class="menu_item_border">
+        全部
+      </view>
+    </view>
+    <view class="menu_item {{item.id==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" bindtap="tabChange" data-index="{{item.id}}">
+      <view class="menu_item_border">
+        {{item.cate_name}}
+      </view>
+    </view>
+  </scroll-view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="true" style="/*height:422rpx;*/">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.logo}}" data-index="{{item.id}}" bindtap="goDetail" class="slide-image" style="width:100%;height:150px;" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="weui-panel weui-panel_access m-t-0">
+    <view class="weui-panel__bd">
+      <block wx:for="{{list}}">
+        <view class="weui-media-box weui-media-box_appmsg padding-r-0" data-index="{{item.id}}" bindtap="goDetail">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.thumb_logo}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.tname}}-{{item.cate_name}}</view>
+            <view class="weui-media-box__info m-t-0 color-999 break-word">
+              <view class="weui-media-box__info__meta padding-right-10">{{item.starttime}}</view>
+              <view class="weui-media-box__info__meta padding-r-0 place weui-media-box__info__meta_extra padding-left-10">{{item.address}}</view>
+            </view>
+            <view class="list-footer">
+              <view class="weui-media-box__desc">人数：{{item.join_num}}/{{item.number}}</view>
+              <view wx:if="{{item.jl!=undefined}}" class="weui-media-box__desc margin-right-20">距离：{{item.jl}}米</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

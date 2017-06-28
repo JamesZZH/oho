@@ -1,0 +1,99 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article padding-030">
+      <view>
+        <view class="weui-article__h1 font-size-50 text-center m-b-0">个人资料</view>
+      </view>
+      <view class="page__bd weui-form-preview">
+        <view style="border-bottom:0.5px solid #D9D9D9;" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="chooseLogo">
+          <view class="weui-cell__hd">
+            <image class="logo" src="{{logo}}"></image>
+          </view>
+          <view class="weui-cell__bd"></view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">头像</view>
+        </view>
+        <form bindsubmit="formSubmit">
+          <view class="weui-cell height-100 weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">用户名</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input text-right" name="name" placeholder="请输入用户名" bindinput="input" maxlength="10" value="{{list.name}}" />
+            </view>
+          </view>
+          <view class="weui-cell height-100 weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">性别</view>
+            </view>
+            <view class="weui-cell__bd text-right">
+              <radio-group class="radio-group" bindchange="radioChange">
+                <block wx:for="{{sex}}">
+                  <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+                </block>
+              </radio-group>
+            </view>
+          </view>
+          <view class="weui-cell height-100 weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">出生日期</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{date=='0000-00-00'?'2000-01-01':date}}" bindchange="bindDateChange">
+                <view class="weui-select weui-select_in-select-after border-right-0 text-right">{{date=='0000-00-00'?'':date}}</view>
+              </picker>
+            </view>
+          </view>
+          <view class="weui-cell height-100 weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">联系方式</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input text-right phone" name="phone" disabled placeholder="请输入联系方式" bindinput="input" value="{{list.phone}}" />
+              <view class="xiugai" bindtap="xiugai">修改</view>
+            </view>
+          </view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell  weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label" style="width:80rpx;">照片</view>
+              </view>
+              <view class="weui-cell__bd">
+                <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 550rpx;margin-top:10rpx;">
+                  <block wx:for="{{piclist}}">
+                    <image src="{{list.web_server}}{{item}}" class="scroll-view-item_H" style="margin-right: 20rpx"></image>
+                    <view data-id="{{item}}" data-index="{{index}}" class="del-old" bindtap="del">X</view>
+                  </block>
+                </scroll-view>
+                <view class="weui-uploader__bd overflow-inherit" style="border-bottom:0.5px solid #1296db;">
+                  <view class="weui-uploader__input-box" style="margin:5px;">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                  <view class="weui-uploader__files overflow-inherit">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file" style="margin:5px;">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                        <view class="del" data-index="{{index}}" bindtap="delPic">X</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <button class="margin-top-20" type="primary" formType="submit" disabled="{{dis}}">保存</button>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="newPhone {{xiugai?'':'display-none'}}">
+  <view style="width:670rpx;height:120rpx;margin-top:300rpx;">
+    <input class="newPhoneInput" type="number" name="newPhone" placeholder="请输入手机号" bindinput="newPhone" value="{{newPhone}}" />
+    <view bindtap="getCode" class="getCode">获取验证码</view>
+  </view>
+  <view style="width:670rpx;height:120rpx;">
+    <input class="newCodeInput" type="number" name="code" placeholder="请输入验证码" bindinput="code" value="{{code}}" />
+  </view>
+  <button type="primary" style="margin-top:30rpx;width:670rpx;margin-left:0;" bindtap="check_code">确认修改</button>
+  <button style="margin-top:30rpx;width:670rpx;margin-left:0;" bindtap="cancel">取消修改</button>
+</view>

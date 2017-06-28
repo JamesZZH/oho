@@ -1,0 +1,27 @@
+<import src="../template/template.wxml" />
+<view class="weui-cells weui-cells_after-title">
+  <view data-index="{{list.id}}" bindtap="goJoin" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/join.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">我参与的活动</view>
+    <view class="weui-cell__ft">
+      <image class="more" src="{{act_join?'../../images/more-act.png':'../../images/more.png'}}"></image>
+    </view>
+  </view>
+  <view class="{{act_join?'':'display-none'}}">
+    <template is="join_active" data="{{join_active}}" />
+  </view>
+  <view data-index="{{list.id}}" bindtap="goPub" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/pub.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">我发起的活动</view>
+    <view class="weui-cell__ft">
+      <image class="more" src="{{act_pub?'../../images/more-act.png':'../../images/more.png'}}"></image>
+    </view>
+  </view>
+  <view class="{{act_pub?'':'display-none'}}">
+    <template is="my_active" data="{{my_active}}" />
+  </view>
+</view>

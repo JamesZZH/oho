@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view>
+        <view class="weui-article__h1 font-size-50 text-center m-b-0">{{list.tname}}</view>
+        <view class="text-right main-color" bindtap="goReport">举报</view>
+      </view>
+      <view class="page__bd weui-form-preview">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">活动人数</view>
+            <view class="weui-cell__ft">{{list.join_num}}/{{list.number}}</view>
+          </view>
+          <view class="weui-cell">
+            <view class="weui-cell__bd">项目种类</view>
+            <view class="weui-cell__ft">{{list.cate_name}}</view>
+          </view>
+          <view class="weui-cell weui-cell_access" data-index="{{list.member_id}}" bindtap="goSponsor">
+            <view class="weui-cell__bd">发布人</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">{{list.username}}</view>
+          </view>
+          <view class="weui-cell">
+            <view class="weui-cell__bd">手机号</view>
+            <view class="weui-cell__ft" style="width:400rpx;">{{list.phone}}</view>
+          </view>
+          <view class="weui-cell">
+            <view class="weui-cell__bd">暗号</view>
+            <view class="weui-cell__ft" style="width:400rpx;">{{list.vcode}}</view>
+          </view>
+          <view class="weui-cell weui-cell_access" bindtap="goMap">
+            <view class="weui-cell__bd">地点</view>
+            <view class="weui-cell__ft" style="width:400rpx;">{{list.address}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access margin-left-10">
+              <image class="navigation" src="../../images/navigation.png"></image>
+            </view>
+          </view>
+          <view class="weui-cell" data-pic="{{list.logo}}" bindtap="showPic">
+            <view class="weui-cell__bd">图片</view>
+            <image class="detail-pic" style="width:80px;height:80px;" src="{{list.thumb_logo}}"></image>
+          </view>
+          <view class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd">{{list.acode==1?'支付费用':'押金'}}</view>
+            <view class="weui-cell__ft">¥{{list.price}}</view>
+            <view bindtap="help" class="weui-cell__ft weui-cell__ft_in-access margin-left-10">
+              <image class="navigation" src="../../images/help.png"></image>
+            </view>
+          </view>
+        </view>
+        <button wx:if="{{list.is_pay=='4'}}" disabled style="margin-top:30rpx;">活动已取消</button>
+        <button wx:if="{{list.is_pay=='3'}}" disabled style="margin-top:30rpx;">已退款</button>
+        <button wx:if="{{list.is_pay=='6'&&list.acode=='1'}}" disabled style="margin-top:30rpx;">已签到</button>
+        <!--我发布的活动-->
+        <button wx:if="{{list.is_pay=='1'&&list.attribute=='a'}}" type="primary" bindtap="sign" style="margin-top:30rpx;">签到</button>
+        <!--我参与的-->
+        <button wx:if="{{list.zt=='1'&&list.attribute=='b'}}" type="primary" bindtap="join_sign" style="margin-top:30rpx;">签到</button>
+        <!--我参与但是未支付-->
+        <button wx:if="{{list.is_pay=='1'&&list.zt=='0'}}" data-id="{{list.oid}}" bindtap="join_pay" type="primary" style="margin-top:30rpx;">支付</button>
+        <!--我发起但是未支付-->
+        <button wx:if="{{list.is_pay=='0'&&list.zt=='7'&&list.acode!='1'}}" disabled type="primary" style="margin-top:30rpx;">发起人未支付</button>
+        <!--我发起但是未支付-->
+        <button wx:if="{{list.is_pay=='0'&&list.zt=='0'}}" bindtap="pay" type="primary" style="margin-top:30rpx;">支付</button>
+        <button wx:if="{{list.is_pay!='4'&&(list.zt=='4'||list.zt=='7')}}" type="primary" bindtap="goPay" style="margin-top:30rpx;">报名</button>
+      </view>
+    </view>
+  </view>
+</view>

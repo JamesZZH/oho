@@ -1,0 +1,27 @@
+<view class="pay">
+  <view class="page__bd">
+    <icon type="{{list.data.is_pay=='0'?'warn':'success'}}" size="100" style="text-align: center;display: block;" />
+    <view class="font-size-50 text-center line-height-150">{{list.msg}}</view>
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">付款金额：</view>
+          <view class="weui-form-preview__value_in-hd">¥{{list.data.total_price}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">联系方式：</view>
+          <view class="weui-form-preview__value color-black">{{list.data.phone}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">活动暗号：</view>
+          <view class="weui-form-preview__value color-black">{{list.data.vcode}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="pay-button">
+  <button type="primary" size="default" bindtap="goBack">我知道了</button>
+</view>

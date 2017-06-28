@@ -1,0 +1,91 @@
+/* pages/activity/activity.wxss */
+
+/*.float-action {
+  height: 160rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 20rpx;
+  z-index: 10000;
+    background: #1296db;
+}
+.float-action-title{
+  font-size: 28rpx;
+  text-align: center;
+}*/
+
+.select-location {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 20rpx;
+  z-index: 10000;
+  background: #1296db;
+  border-radius: 20rpx;
+  line-height: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.body {
+  width: 750rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.select-location image {
+  height: 80rpx;
+  width: 80rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.place {
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.xscroll_bar {
+  overflow-y: hidden;
+  height: 87rpx;
+  line-height: 80rpx;
+  white-space: nowrap;
+  display: flex;
+  background: #fff;
+  /*border-bottom: 1rpx solid #bbb;*/
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.menu_item {
+  text-align: center;
+  font-size: 30rpx;
+  color: #7c7c7c;
+  display: inline-block;
+  border-bottom: 8rpx solid #fff;
+}
+
+.menu_item_border {
+  /*border-left: 1rpx solid #1296db;*/
+}
+
+/*目前暂时不支持伪类，边距的去除只能动态判断*/
+
+.xscroll_bar .active {
+  color: #1296db;
+  /*background: #1296db;*/
+  border-bottom: 8rpx solid #1296db !important;
+}
+
+.slide-image{
+  width: 750rpx;
+  height: 422rpx;
+}

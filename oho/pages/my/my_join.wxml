@@ -1,0 +1,2 @@
+<import src="../template/template.wxml" />
+<template is="join_active" data="{{join_active}}" />

@@ -1,0 +1,47 @@
+<view class="page__bd">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" confirm-type='search' class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
+<view class="weui-cells searchbar-result" wx:if="{{show == 2}}">
+  <view class="weui-panel weui-panel_access m-t-0">
+    <view class="weui-panel__bd">
+      <block wx:for="{{list}}">
+        <view class="weui-media-box weui-media-box_appmsg padding-r-0" data-index="{{item.id}}" bindtap="goDetail">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.logo}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.tname}}-{{item.cate_name}}</view>
+            <view class="weui-media-box__info m-t-0 color-999 break-word">
+              <view class="weui-media-box__info__meta padding-right-10">{{item.starttime}}</view>
+              <view class="weui-media-box__info__meta padding-r-0 place weui-media-box__info__meta_extra padding-left-10">{{item.address}}</view>
+            </view>
+            <view class="list-footer">
+              <view class="weui-media-box__desc">人数：{{item.join_num}}/{{item.number}}</view>
+              <view class="weui-media-box__desc margin-right-20">距离：{{item.jl}}米</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="no-found" wx:if="{{show == 1}}">
+  <view class="no-found-body">
+    找不到内容
+  </view>
+</view>

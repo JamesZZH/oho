@@ -1,0 +1,126 @@
+/* pages/setting/mySetting.wxss */
+
+.navigation {
+  width: 20px;
+  height: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.detail-pic {
+  margin-right: 5px;
+  vertical-align: middle;
+  max-width: 200px;
+  height: 100px;
+}
+
+.weui-uploader__input-box {
+  float: right;
+  position: relative;
+  margin-right: 9px;
+  margin: 9px;
+  width: 77px;
+  height: 77px;
+  border: 1px solid #d9d9d9;
+}
+
+.weui-uploader__file {
+  float: right;
+  margin: 9px;
+}
+
+.logo {
+  border-radius: 50%;
+  border: 1rpx solid #707070;
+  vertical-align: middle;
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.del {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-top: -80px;
+  margin-left: 55px;
+  background: black;
+  opacity: 0.5;
+  color: #fff;
+  border-bottom-left-radius: 40rpx;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+}
+
+.scroll-view-item {
+  height: 300rpx;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  width: 79px;
+  height: 79px;
+}
+
+.del-old {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-left: -36px;
+  background: black;
+  opacity: 0.5;
+  color: #fff;
+  border-bottom-left-radius: 40rpx;
+  display: inline;
+}
+
+.phone {
+  width: 300rpx;
+  display: inline-block;
+}
+
+.xiugai {
+  line-height: 89rpx;
+  float: right;
+  display: inline-block;
+  color: #d81e06;
+}
+
+.newPhoneInput {
+  display: inline-block;
+  background: #fff;
+  width: 520rpx;
+  height:96rpx;
+  line-height: 96rpx;
+}
+.newCodeInput {
+  display: inline-block;
+  background: #fff;
+  width: 670rpx;
+  height:96rpx;
+}
+
+.newPhone {
+  padding: 0 40rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.getCode {
+  line-height: 96rpx;
+  border-left: 1px solid #707070;
+  display: inline-block;
+  font-size: 28rpx;
+  background: #fff;
+  width: 148rpx;
+  text-align: center;
+  color: #d81e06;
+}

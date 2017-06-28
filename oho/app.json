@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/activity/activity",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/detail/report",
+    "pages/sponsor/sponsor",
+    "pages/pay/pay",
+    "pages/pay/join",
+    "pages/pay/pay-success",
+    "pages/pay/join-success",
+    "pages/sign/sign",
+    "pages/my/my",
+    "pages/my/my_join",
+    "pages/my/my_pub",
+    "pages/setting/mySetting",
+    "pages/setting/about",
+    "pages/rate/rate",
+    "pages/rate/rateDetail",
+    "pages/write/write"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "OHO",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/activity/activity",
+        "iconPath": "images/activity.png",
+        "selectedIconPath": "images/selected-activity.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/sign/sign",
+        "iconPath": "images/sign.png",
+        "selectedIconPath": "images/selected-sign.png",
+        "text": "签到"
+      },
+      {
+        "pagePath": "pages/write/write",
+        "iconPath": "images/write.png",
+        "selectedIconPath": "images/selected-write.png",
+        "text": "新活动"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/selected-search.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/selected-my.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

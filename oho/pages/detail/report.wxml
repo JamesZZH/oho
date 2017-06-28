@@ -1,0 +1,9 @@
+<view class="padding-40">
+  <view class="lineheight80">举报</view>
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="" type="primary" name="textarea" class="comment-area" />
+    <view class="main-button">
+      <button form-type="submit" type="primary" class="main-color" formType="submit">提交</button>
+    </view>
+  </form>
+</view>

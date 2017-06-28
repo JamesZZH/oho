@@ -1,0 +1,29 @@
+<view class="pay">
+  <view class="page__bd">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">付款金额：</view>
+          <view class="weui-form-preview__value_in-hd">¥{{list.total_price}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">活动名称：</view>
+          <view class="weui-form-preview__value color-black">{{list.tname}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">开始时间：</view>
+          <view class="weui-form-preview__value color-black">{{list.start_time}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label color-black">发布人：</view>
+          <view class="weui-form-preview__value color-black">{{list.username}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="pay-button">
+  <button data-id="{{list.id}}" type="primary" size="default" bindtap="pay">去支付</button>
+</view>

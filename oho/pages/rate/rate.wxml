@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view>
+        <view class="weui-article__h1 font-size-50 text-center m-b-0">活动评价</view>
+      </view>
+      <view class="page__bd weui-form-preview">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">活动名称</view>
+            <view class="weui-cell__ft">{{list.tname}}</view>
+          </view>
+          <view class="weui-cell weui-cell_access" data-index="{{list.member_id}}" bindtap="goSponsor">
+            <view class="weui-cell__bd">发布人</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">{{list.username}}</view>
+          </view>
+          <view class="weui-cell">
+            <view class="weui-cell__bd">开始时间</view>
+            <view class="weui-cell__ft" style="width:400rpx;">{{list.starttime}}</view>
+          </view>
+          <view class="weui-cell weui-cell_access" bindtap="goMap">
+            <view class="weui-cell__bd">地点</view>
+            <view class="weui-cell__ft" style="width:400rpx;">{{list.address}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access margin-left-10">
+              <image class="navigation" src="../../images/navigation.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title" style="margin-top:50rpx;">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">满意度</view>
+            <view class="star-pos" style="display:flex;flex-direction:row;">
+              <image class="star" src="{{flag2>=1? '../../images/star-fill.png': '../../images/star.png'}}" bindtap="changeColor11"></image>
+              <image class="star" src="{{flag2>=2? '../../images/star-fill.png': '../../images/star.png'}}" bindtap="changeColor12"></image>
+              <image class="star" src="{{flag2>=3? '../../images/star-fill.png': '../../images/star.png'}}" bindtap="changeColor13"></image>
+              <image class="star" src="{{flag2>=4? '../../images/star-fill.png': '../../images/star.png'}}" bindtap="changeColor14"></image>
+              <image class="star" src="{{flag2>=5? '../../images/star-fill.png': '../../images/star.png'}}" bindtap="changeColor15"></image>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">选择图片</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-uploader__bd overflow-inherit">
+                <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
+                <view class="weui-uploader__files overflow-inherit">
+                  <block wx:for="{{imageList}}" wx:for-item="image">
+                    <view class="weui-uploader__file">
+                      <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">评价</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="section">
+                <textarea style="width:210px;" bindblur="content" placeholder="请输入对活动的评价" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <button type="primary" bindtap="rate" style="margin-top:30rpx;" disabled=''>提交评论</button>
+      </view>
+    </view>
+  </view>
+</view>

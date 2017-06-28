@@ -1,0 +1,86 @@
+/* pages/rate/rate.wxss */
+
+.navigation {
+  width: 20px;
+  height: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.detail-pic {
+  margin-right: 5px;
+  vertical-align: middle;
+  max-width: 200px;
+  height: 100px;
+}
+
+.navigation {
+  width: 20px;
+  height: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.detail-pic {
+  margin-right: 5px;
+  vertical-align: middle;
+  max-width: 200px;
+  height: 100px;
+}
+
+.weui-uploader__input-box {
+  float: right;
+  position: relative;
+  margin-right: 9px;
+  margin: 9px;
+  width: 77px;
+  height: 77px;
+  border: 1px solid #d9d9d9;
+}
+
+.weui-uploader__file {
+  float: right;
+  margin: 9px;
+}
+
+.comment1-description {
+  margin-top: 35rpx;
+}
+
+.comment1-description1 {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 30rpx;
+}
+
+.star-pos {
+  position: absolute;
+  right: 0px;
+  margin-right: 40rpx;
+}
+
+.star-pos .hideStar {
+  z-index: 2;
+  background-image: url("../../images/star.png");
+  width: 83rpx;
+  height: 43rpx;
+  background-size: 43rpx 43rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.starsM {
+  z-index: 1;
+  width: 83rpx;
+  height: 43rpx;
+  background-image: url("../../images/star-fill.png");
+  background-size: 43rpx 43rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.star {
+  height: 60rpx;
+  width: 60rpx;
+}

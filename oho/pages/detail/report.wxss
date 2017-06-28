@@ -1,0 +1,24 @@
+/* pages/detail/report.wxss */
+
+.comment-area {
+  width: 100%;
+  border: 1rpx solid #ddd;
+  background-color: white;
+}
+
+.lineheight80 {
+  line-height: 80rpx;
+}
+
+.main-button {
+  margin: 30rpx 30rpx;
+}
+
+.main-color {
+  color: #fff;
+  background-color: #1296db;
+}
+
+.padding-40 {
+    padding: 40rpx;
+}

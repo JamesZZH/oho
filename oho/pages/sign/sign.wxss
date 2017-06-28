@@ -1,0 +1,6 @@
+/* pages/sign/sign.wxss */
+
+.more {
+  width: 30rpx;
+  height: 30rpx;
+}

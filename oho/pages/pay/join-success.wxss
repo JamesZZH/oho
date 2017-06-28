@@ -1,0 +1,13 @@
+/* pages/pay/join-success.wxss */
+
+.pay {
+  margin-top: 10%;
+  padding: 20rpx;
+}
+
+.pay-button {
+  position: absolute;
+  width: 710rpx;
+  padding: 20rpx;
+  bottom: 100rpx;
+}

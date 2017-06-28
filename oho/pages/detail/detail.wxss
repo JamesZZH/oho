@@ -1,0 +1,15 @@
+/* pages/detail/detail.wxss */
+
+.navigation {
+  width: 20px;
+  height: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.detail-pic {
+  margin-right: 5px;
+  vertical-align: middle;
+  max-width: 200px;
+  height: 100px;
+}

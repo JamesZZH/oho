@@ -1,0 +1,44 @@
+<import src="../template/template.wxml" />
+<view class="app">
+  <view class="ele-container">
+    <image class="show-bac" src="http://1251027630.cdn.myqcloud.com/1251027630/zhichi_frontend/static/webapp/images/top_bg.jpg"></image>
+    <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
+      <view class="show-view">
+        <image class="cover-thumb" data-index="{{list.id}}" bindtap="goSetting" src="{{list.logo}}"></image>
+        <view class="nickname">{{list.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <view data-index="{{list.id}}" bindtap="goSign" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/join.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">我参与的活动</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">查看全部</view>
+  </view>
+  <template is="join_active" data="{{join_active}}" />
+  <view data-index="{{list.id}}" bindtap="goSign" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/pub.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">我发起的活动</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">查看全部</view>
+  </view>
+  <template is="my_active" data="{{my_active}}" />
+  <view data-index="{{list.id}}" bindtap="goSetting" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/setting.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">设置</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+  <view bindtap="goAbout" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../images/about.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">关于</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<template name="join_active">
+  <view wx:for="{{join_active}}" style="border-top:1rpx solid #D9D9D9">
+    <view class="weui-cell" data-id="{{item.active_id}}" bindtap="goDetail">
+      <view class="weui-cell__bd">{{item.tname}}</view>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='0'}}" class="pull-right margin-left-10" size="mini" catchtap="join_pay">支付</button>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='1'}}" class="pull-right margin-left-10" size="mini" catchtap="join_sign">签到</button>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='2'}}" class="pull-right margin-left-10" size="mini" disabled>退款中</button>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='3'}}" class="pull-right margin-left-10" size="mini" disabled>已退款</button>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='4'}}" class="pull-right margin-left-10" size="mini" disabled>活动取消</button>
+      <!--item.pay_status=='5' 其他原因退款-->
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='5'}}" class="pull-right margin-left-10" size="mini" disabled>已退款</button>
+      <!--item.pay_status=='6' 未退款-->
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='6'&& item.acode=='1'}}" class="pull-right margin-left-10" size="mini" disabled>已签到</button>
+      <button data-id="{{item.id}}" wx:if="{{item.pay_status=='6'&& item.acode=='0'}}" class="pull-right margin-left-10" size="mini" disabled>未退款</button>
+      <button data-idd="{{item.id}}" data-id="{{item.active_id}}" data-index="{{index}}" data-comment="{{item.is_comment}}" wx:if="{{item.is_can_pl=='1'}}" class="pull-right margin-left-10" size="mini" catchtap="rate">{{item.pay_status!=4&&item.is_comment=='1'?'评价':'已评价'}}</button>
+      <button data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.pay_status=='1'||item.pay_status=='0'}}" class="pull-right margin-left-10" size="mini" catchtap="cancel_join">取消</button>
+    </view>
+    <view style="font-size:24rpx;padding:0 15px;">开始时间：{{item.starttime}}</view>
+  </view>
+</template>
+<template name="my_active">
+  <view wx:for="{{my_active}}" style="border-top:1rpx solid #D9D9D9">
+    <view class="weui-cell" data-id="{{item.id}}" bindtap="goDetail">
+      <view class="weui-cell__bd">{{item.tname}}</view>
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='0'}}" class="pull-right margin-left-10" size="mini" catchtap="pay">支付</button>
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='1'||item.is_pay=='3'}}" class="pull-right margin-left-10" size="mini" catchtap="sign">签到</button>
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='2'}}" class="pull-right margin-left-10" size="mini" disabled>退款中</button>
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='3'}}" class="pull-right margin-left-10" size="mini" disabled>已退款</button>
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='4'}}" class="pull-right margin-left-10" size="mini" disabled>活动取消</button>
+      <!--item.is_pay=='5' 其他原因退款-->
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='5'}}" class="pull-right margin-left-10" size="mini" disabled>已退款</button>
+      <!--item.is_pay=='6' 未退款-->
+      <button data-id="{{item.id}}" wx:if="{{item.is_pay=='6'}}" class="pull-right margin-left-10" size="mini" disabled>未退款</button>
+      <button data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.is_pay=='1'||item.is_pay=='0'}}" class="pull-right margin-left-10" size="mini" catchtap="cancel">取消</button>
+    </view>
+    <view style="font-size:24rpx;padding:0 15px;">开始时间：{{item.starttime}}</view>
+  </view>
+</template>

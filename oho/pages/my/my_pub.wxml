@@ -1,0 +1,2 @@
+<import src="../template/template.wxml" />
+<template is="my_active" data="{{my_active}}" />
